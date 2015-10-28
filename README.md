@@ -3,7 +3,7 @@ A suite for running regression tests for IRSTLM
 
 CONTENT:
 
-- code: contains scripts for running the tests
+- scripts: contains scripts for running the tests
 - tests: contains the actual tests
 - data: contains shared data and models used by the tests
 - README.md: this file
