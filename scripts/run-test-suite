@@ -57,15 +57,16 @@ use POSIX qw ( strftime );
 
 my $test_dir;
 my $BIN_TEST = $script_dir;
+my $MAIN_TEST = "${script_dir}/..";
 my $data_dir;
 
 GetOptions("data-dir=s" => \$data_dir,
           ) or exit 1;
 
-$data_dir = IrstLMRegressionTesting::find_data_directory($BIN_TEST, $data_dir);
+$data_dir = IrstLMRegressionTesting::find_data_directory($MAIN_TEST, $data_dir);
 
 my $test_run = "$BIN_TEST/run-single-test.pl --data-dir=$data_dir";
-$test_dir = $script_dir . "/tests";
+$test_dir = $MAIN_TEST . "/tests";
 $test_run .= " --test-dir=$test_dir" if $test_dir;
 
 print "Data directory: $data_dir\n";
