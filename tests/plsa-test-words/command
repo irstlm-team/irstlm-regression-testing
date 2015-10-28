@@ -1,0 +1,14 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile=input
+outputfile=output
+
+$bin/plsa -te="$inputfile" -m=model -t=30 -it=20 -wf=$outputfile > /dev/null 2>&1
+cat ${outputfile}.001 | perl -pe 's/[\t ]+/\n/g;'
+
+rm ${outputfile}.*

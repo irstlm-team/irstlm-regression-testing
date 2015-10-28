@@ -1,0 +1,427 @@
+nGrAm 4 286 ngram
+139
+<s> 49
+</s> 50
+debates 1
+of 13
+the 5
+senate 2
+( 1
+hansard 1
+) 1
+2 1
+nd 1
+session 1
+, 7
+36 1
+th 1
+parliament 1
+volume 1
+138 1
+issue 1
+42 1
+tuesday 1
+april 1
+4 1
+2000 1
+honourable 1
+gildas 1
+l. 1
+molgat 1
+speaker 1
+table 1
+contents 1
+senators 1
+' 1
+statements 1
+prime 1
+minister 1
+japan 1
+plight 1
+street 1
+children 1
+senegal 1
+new 2
+government 2
+cancer 1
+awareness 1
+month 1
+routine 1
+proceedings 1
+internal 1
+economy 1
+budgets 1
+and 3
+administration 1
+seventh 1
+report 1
+committee 4
+presented 1
+scrutiny 1
+regulations 1
+question 1
+period 1
+delayed 1
+answers 1
+to 7
+oral 1
+questions 1
+agriculture 1
+agri 1
+@-@ 11
+food 1
+farm 1
+crisis 1
+in 6
+prairie 1
+provinces 1
+flooding 1
+problem 1
+manitoba 1
+saskatchewan 1
+request 1
+for 2
+response 1
+environment 1
+residency 1
+requirement 1
+job 1
+applicants 1
+export 1
+development 1
+canada 3
+china 1
+influence 1
+environmental 1
+policy 1
+granting 1
+funds 1
+three 1
+gorges 1
+dam 1
+project 1
+national 2
+defence 2
+orders 1
+day 1
+nisga'a 1
+final 1
+agreement 1
+bill 6
+third 1
+reading 7
+debate 4
+continued 3
+motion 1
+amendment 1
+quebec 1
+secession 1
+reference 1
+second 6
+business 2
+fisheries 1
+marine 1
+liability 1
+referred 3
+act 3
+amend 2
+canadian 1
+institutes 1
+health 1
+research 1
+payments 1
+lieu 1
+taxes 1
+adjourned 1
+corporations 1
+cooperatives 1
+financing 1
+post 1
+secondary 1
+education 1
+<s> <s> <s> <s>	1
+<s> <s> <s> </s>	1
+<s> <s> </s> <s>	1
+<s> </s> <s> debates	1
+<s> debates of the	1
+<s> the honourable gildas	1
+<s> 2 nd session	1
+<s> volume 138 ,	1
+<s> tuesday , april	1
+<s> table of contents	1
+<s> senators ' statements	1
+<s> prime minister of	1
+<s> plight of street	1
+<s> senegal </s> <s>	1
+<s> new government </s>	2
+<s> cancer awareness month	1
+<s> routine proceedings </s>	1
+<s> internal economy ,	1
+<s> seventh report of	1
+<s> scrutiny of regulations	1
+<s> question period </s>	1
+<s> delayed answers to	1
+<s> agriculture and agri	1
+<s> farm crisis in	1
+<s> in the quebec	1
+<s> environment </s> <s>	1
+<s> residency requirement for	1
+<s> export development canada	1
+<s> canada business corporations	1
+<s> canada cooperatives act	1
+<s> china @-@ influence	1
+<s> national defence </s>	1
+<s> national defence act	1
+<s> orders of the	1
+<s> nisga'a final agreement	1
+<s> bill to amend	2
+<s> third reading @-@	1
+<s> motion in amendment	1
+<s> second reading </s>	2
+<s> second reading @-@	2
+<s> business of the	1
+<s> fisheries </s> <s>	1
+<s> marine liability bill	1
+<s> referred to committee	3
+<s> canadian institutes of	1
+<s> payments in lieu	1
+<s> financing of post	1
+</s> <s> <s> <s>	1
+</s> <s> debates of	1
+</s> <s> the honourable	1
+</s> <s> 2 nd	1
+</s> <s> volume 138	1
+</s> <s> tuesday ,	1
+</s> <s> table of	1
+</s> <s> senators '	1
+</s> <s> prime minister	1
+</s> <s> plight of	1
+</s> <s> senegal </s>	1
+</s> <s> new government	2
+</s> <s> cancer awareness	1
+</s> <s> routine proceedings	1
+</s> <s> internal economy	1
+</s> <s> seventh report	1
+</s> <s> scrutiny of	1
+</s> <s> question period	1
+</s> <s> delayed answers	1
+</s> <s> agriculture and	1
+</s> <s> farm crisis	1
+</s> <s> in the	1
+</s> <s> environment </s>	1
+</s> <s> residency requirement	1
+</s> <s> export development	1
+</s> <s> canada business	1
+</s> <s> canada cooperatives	1
+</s> <s> china @-@	1
+</s> <s> national defence	2
+</s> <s> orders of	1
+</s> <s> nisga'a final	1
+</s> <s> bill to	2
+</s> <s> third reading	1
+</s> <s> motion in	1
+</s> <s> second reading	4
+</s> <s> business of	1
+</s> <s> fisheries </s>	1
+</s> <s> marine liability	1
+</s> <s> referred to	3
+</s> <s> canadian institutes	1
+</s> <s> payments in	1
+</s> <s> financing of	1
+debates of the senate	1
+of the senate </s>	1
+of the senate (	1
+of the day </s>	1
+of contents </s> <s>	1
+of japan </s> <s>	1
+of street children </s>	1
+of committee presented </s>	1
+of regulations </s> <s>	1
+of environmental policy in	1
+of funds to three	1
+of health research bill	1
+of taxes bill </s>	1
+of post @-@ secondary	1
+the senate </s> <s>	1
+the senate ( hansard	1
+the honourable gildas l.	1
+the day </s> <s>	1
+the quebec secession reference	1
+senate </s> <s> fisheries	1
+senate ( hansard )	1
+( hansard ) </s>	1
+hansard ) </s> <s>	1
+) </s> <s> 2	1
+2 nd session ,	1
+nd session , 36	1
+session , 36 th	1
+, </s> <s> volume	1
+, 36 th parliament	1
+, issue 42 </s>	1
+, april 4 ,	1
+, 2000 </s> <s>	1
+, speaker </s> <s>	1
+, budgets and administration	1
+36 th parliament ,	1
+th parliament , </s>	1
+parliament , </s> <s>	1
+volume 138 , issue	1
+138 , issue 42	1
+issue 42 </s> <s>	1
+42 </s> <s> tuesday	1
+tuesday , april 4	1
+april 4 , 2000	1
+4 , 2000 </s>	1
+2000 </s> <s> the	1
+honourable gildas l. molgat	1
+gildas l. molgat ,	1
+l. molgat , speaker	1
+molgat , speaker </s>	1
+speaker </s> <s> table	1
+table of contents </s>	1
+contents </s> <s> senators	1
+senators ' statements </s>	1
+' statements </s> <s>	1
+statements </s> <s> prime	1
+prime minister of japan	1
+minister of japan </s>	1
+japan </s> <s> plight	1
+plight of street children	1
+street children </s> <s>	1
+children </s> <s> senegal	1
+senegal </s> <s> new	1
+new government </s> <s>	2
+government </s> <s> cancer	1
+government </s> <s> routine	1
+cancer awareness month </s>	1
+awareness month </s> <s>	1
+month </s> <s> new	1
+routine proceedings </s> <s>	1
+proceedings </s> <s> internal	1
+internal economy , budgets	1
+economy , budgets and	1
+budgets and administration </s>	1
+and administration </s> <s>	1
+and agri @-@ food	1
+and saskatchewan @-@ request	1
+administration </s> <s> seventh	1
+seventh report of committee	1
+report of committee presented	1
+committee </s> <s> national	1
+committee </s> <s> canadian	1
+committee </s> <s> payments	1
+committee presented </s> <s>	1
+presented </s> <s> scrutiny	1
+scrutiny of regulations </s>	1
+regulations </s> <s> question	1
+question period </s> <s>	1
+period </s> <s> delayed	1
+delayed answers to oral	1
+answers to oral questions	1
+to committee </s> <s>	3
+to oral questions </s>	1
+to three gorges dam	1
+to amend @-@ second	2
+oral questions </s> <s>	1
+questions </s> <s> agriculture	1
+agriculture and agri @-@	1
+agri @-@ food </s>	1
+@-@ food </s> <s>	1
+@-@ flooding problem in	1
+@-@ request for response	1
+@-@ influence of environmental	1
+@-@ debate continued </s>	3
+@-@ debate adjourned </s>	1
+@-@ second reading </s>	1
+@-@ second reading @-@	1
+@-@ secondary education </s>	1
+food </s> <s> farm	1
+farm crisis in prairie	1
+crisis in prairie provinces	1
+in the quebec secession	1
+in prairie provinces @-@	1
+in manitoba and saskatchewan	1
+in granting of funds	1
+in amendment </s> <s>	1
+in lieu of taxes	1
+prairie provinces @-@ flooding	1
+provinces @-@ flooding problem	1
+flooding problem in manitoba	1
+problem in manitoba and	1
+manitoba and saskatchewan @-@	1
+saskatchewan @-@ request for	1
+request for response </s>	1
+for response </s> <s>	1
+for job applicants </s>	1
+response </s> <s> environment	1
+environment </s> <s> residency	1
+residency requirement for job	1
+requirement for job applicants	1
+job applicants </s> <s>	1
+applicants </s> <s> export	1
+export development canada </s>	1
+development canada </s> <s>	1
+canada </s> <s> china	1
+canada business corporations act	1
+canada cooperatives act </s>	1
+china @-@ influence of	1
+influence of environmental policy	1
+environmental policy in granting	1
+policy in granting of	1
+granting of funds to	1
+funds to three gorges	1
+three gorges dam project	1
+gorges dam project </s>	1
+dam project </s> <s>	1
+project </s> <s> national	1
+national defence </s> <s>	1
+national defence act </s>	1
+defence </s> <s> orders	1
+defence act </s> <s>	1
+orders of the day	1
+day </s> <s> nisga'a	1
+nisga'a final agreement bill	1
+final agreement bill </s>	1
+agreement bill </s> <s>	1
+bill </s> <s> third	1
+bill </s> <s> second	3
+bill to amend @-@	2
+third reading @-@ debate	1
+reading </s> <s> referred	3
+reading @-@ debate continued	3
+reading @-@ debate adjourned	1
+debate continued </s> <s>	3
+debate adjourned </s> <s>	1
+continued </s> <s> motion	1
+continued </s> <s> business	1
+continued </s> <s> financing	1
+motion in amendment </s>	1
+amendment </s> <s> in	1
+quebec secession reference </s>	1
+secession reference </s> <s>	1
+reference </s> <s> second	1
+second reading </s> <s>	3
+second reading @-@ debate	3
+business of the senate	1
+business corporations act </s>	1
+fisheries </s> <s> marine	1
+marine liability bill </s>	1
+liability bill </s> <s>	1
+referred to committee </s>	3
+act </s> <s> canada	1
+act </s> <s> bill	2
+amend @-@ second reading	2
+canadian institutes of health	1
+institutes of health research	1
+health research bill </s>	1
+research bill </s> <s>	1
+payments in lieu of	1
+lieu of taxes bill	1
+taxes bill </s> <s>	1
+adjourned </s> <s> canada	1
+corporations act </s> <s>	1
+cooperatives act </s> <s>	1
+financing of post @-@	1
+post @-@ secondary education	1
+secondary education </s> <s>	1
+education </s> <s> <s>	1

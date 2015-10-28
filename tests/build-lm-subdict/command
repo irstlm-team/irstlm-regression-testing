@@ -1,0 +1,14 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile=input.gz
+outputfile=output_$$.gz
+
+$bin/build-lm.sh  -i "gunzip -c $inputfile" -n 4 -o $outputfile -k 5 -t sublmdir -p -u -d subdict  > /dev/null 2>&1
+gunzip -c $outputfile | perl -pe 's/[\t ]+/\n/g'
+
+rm $outputfile

@@ -1,0 +1,31 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+output=PP_$$
+
+( \
+echo ---- Shift Beta  check-prob test.txt without backoff with singleton pruning ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test.txt -dub=1000000 -bo=no -cp=yes -ps=yes 2> /dev/null ; \
+echo ---- Shift Beta  check-prob test.ngt without backoff with singleton pruning ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test.ngt -dub=1000000 -bo=no -cp=yes -ps=yes 2> /dev/null ; \
+echo ---- Shift Beta  check-prob test.txt with backoff with singleton pruning ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test.txt -dub=1000000 -bo=yes -cp=yes -ps=yes 2> /dev/null ; \
+echo ---- Shift Beta  check-prob test.ngt with backoff with singleton pruning ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test.ngt -dub=1000000 -bo=yes -cp=yes -ps=yes 2> /dev/null ; \
+echo ---- Shift Beta  check-prob test.txt without backoff without singleton pruning ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test.txt -dub=1000000 -bo=no -cp=yes -ps=no 2> /dev/null ; \
+echo ---- Shift Beta  check-prob test.ngt without backoff without singleton pruning ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test.ngt -dub=1000000 -bo=no -cp=yes -ps=no 2> /dev/null ; \
+echo ---- Shift Beta  check-prob test.txt with backoff without singleton pruning ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test.txt -dub=1000000 -bo=yes -cp=yes -ps=no 2> /dev/null ; \
+echo ---- Shift Beta  check-prob test.ngt with backoff without singleton pruning ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test.ngt -dub=1000000 -bo=yes -cp=yes -ps=no 2> /dev/null ; \
+) > $output
+
+cat $output | perl -pe 's/[\t ]+/\n/g; s/=/\n=\n/g; '
+
+rm $output

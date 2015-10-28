@@ -1,0 +1,27 @@
+#! /bin/sh 
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile=input
+configfile1=config1
+configfile2=config2
+output=output
+
+get_localized_data(){
+sed s@\$IRSTLM_LM_PATH@$IRSTLM_LM_PATH@;
+}
+
+cat $configfile1 | get_localized_data > $configfile1.$$
+cat $configfile2 | get_localized_data > $configfile2.$$
+
+$bin/interpolate-lm $configfile1.$$ --eval=$inputfile --dub=0 > $output 2> /dev/null 
+$bin/interpolate-lm $configfile2.$$ --eval=$inputfile --dub=0 >> $output 2> /dev/null
+$bin/interpolate-lm $configfile1.$$ --eval=$inputfile >> $output 2> /dev/null
+$bin/interpolate-lm $configfile2.$$ --eval=$inputfile >> $output 2> /dev/null
+cat $output | perl -pe 's/[\t ]+/\n/g; s/=/\n=\n/g;'
+
+rm $output
+rm $configfile1.$$ $configfile2.$$ 

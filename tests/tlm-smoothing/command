@@ -1,0 +1,31 @@
+#! /bin/sh -w
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+output=PP_$$
+
+( \
+echo ShiftOne interp vs. backoff ; \
+$bin/tlm -lm=s1 -n=4 -tr=train  -te=test -dub=1000000 2> /dev/null ; \
+$bin/tlm -lm=s1 -n=4 -tr=train  -te=test -dub=1000000 -bo=yes 2> /dev/null ; \
+echo Shift Beta interp vs. backoff ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test -dub=1000000 2> /dev/null ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -te=test -dub=1000000 -bo=yes 2> /dev/null ; \
+echo Shift Beta beta=0.54 interp vs. backoff ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -beta=0.54 -te=test -dub=1000000 2> /dev/null ; \
+$bin/tlm -lm=sb -n=4 -tr=train  -beta=0.54 -te=test -dub=1000000 -bo=yes 2> /dev/null ; \
+echo Witten Bell interp vs. backoff ; \
+$bin/tlm -lm=wb -n=4 -tr=train  -te=test -dub=1000000 2> /dev/null ; \
+$bin/tlm -lm=wb -n=4 -tr=train  -te=test -dub=1000000 -bo=yes 2> /dev/null ; \
+echo Improved Kneser-Ney interp vs. backoff  ; \
+$bin/tlm -lm=ikn -n=4 -tr=train  -te=test -dub=1000000 2> /dev/null ; \
+$bin/tlm -lm=ikn -n=4 -tr=train  -te=test -dub=1000000 -bo=yes 2> /dev/null ; \
+) > $output
+
+cat $output | perl -pe 's/[\t ]+/\n/g; s/=/\n=\n/g; '
+
+rm $output
+

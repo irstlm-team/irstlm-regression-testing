@@ -1,0 +1,27 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile="gunzip -c input.gz"
+
+echo "dict without frequency, sorted" > tmperr$$
+($bin/dict -i="$inputfile" -o=tmp$$ -sort=y) 2>> tmperr$$
+cat tmp$$ > /dev/stdout
+
+echo "dict without frequency, not sorted" >> tmperr$$
+($bin/dict -i="$inputfile" -o=tmp$$ -sort=n) 2>> tmperr$$
+cat tmp$$ >> /dev/stdout
+
+echo "dict with frequency, sorted" >> tmperr$$
+($bin/dict -i="$inputfile" -o=tmp$$ -f=y -sort=y) 2>> tmperr$$
+cat tmp$$ >> /dev/stdout
+
+echo "dict with frequency, not sorted" >> tmperr$$
+($bin/dict -i="$inputfile" -o=tmp$$ -f=y -sort=n) 2>> tmperr$$
+cat tmp$$ >> /dev/stdout
+cat tmperr$$ > /dev/stderr
+
+rm tmp$$ tmperr$$

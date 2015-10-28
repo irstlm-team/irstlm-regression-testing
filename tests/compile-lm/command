@@ -1,0 +1,16 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile=input.gz
+outputfile1=output1_$$
+outputfile2=output2_$$
+
+$bin/compile-lm $inputfile $outputfile1 > /dev/null 2>&1 
+$bin/compile-lm $outputfile1 $outputfile2 -mm=yes -t=yes > /dev/null 2>&1
+cat $outputfile2 | perl -pe 's/[\t ]+/\n/g'
+
+rm $outputfile1 $outputfile2

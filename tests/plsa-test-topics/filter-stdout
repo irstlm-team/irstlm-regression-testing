@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+$x=0;
+while (<>) {
+  next if /^$/;
+  chomp;
+  $x++;
+  print "STDOUT_$x=$_\n";
+}

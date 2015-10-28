@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+$x=0;
+while (<>) {
+  next if /^$/;
+  chomp;
+  if (!/^LMINTERPOLATION/)
+  {
+    @_=split(/[ \t]+/,$_);
+    $_ = $_[0];
+  }
+  $x++;
+  print "STDOUT_$x=$_\n";
+}

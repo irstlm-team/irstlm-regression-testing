@@ -1,0 +1,15 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile="gunzip -c input.gz"
+outputfile=output
+
+rm model $outputfile
+$bin/plsa -pf=2 -tr="$inputfile" -m=model -twf=$outputfile -it=10 -t=30 -st=50 -th=4 -mm=no > /dev/null 2>&1
+cat $outputfile | perl -pe 's/[\t ]+/\n/g;'
+
+rm $outputfile model

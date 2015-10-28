@@ -1,0 +1,17 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile=input.gz
+outputfile=output_$$
+
+mkdir sublmdir
+$bin/build-lm-qsub.sh  -i "gunzip -c $inputfile" -n 4 -o $outputfile.gz -k 5 -t sublmdir -p  > /dev/null 2>&1
+gunzip -c output.gz | perl -pe 's/[\t ]+/\n/g'
+
+rm -r  sublmdir
+rm output.gz
+

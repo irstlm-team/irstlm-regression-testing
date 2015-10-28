@@ -1,0 +1,24 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile=input
+config_in=config
+config_out1=config.opt1
+config_out2=config.opt2
+output=output
+
+get_localized_data(){
+sed s@\$IRSTLM_LM_PATH@$IRSTLM_LM_PATH@;
+}
+
+cat $config_in | get_localized_data > $config_in.$$
+
+$bin/interpolate-lm --learn=$inputfile $config_in.$$ $config_out1 
+$bin/interpolate-lm --learn=$inputfile $config_in.$$ $config_out2 --dub=0 
+cat $config_out1 $config_out2
+rm $config_out1 $config_out2
+rm $config_in.$$

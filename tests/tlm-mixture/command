@@ -1,0 +1,15 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+outputfile=output_$$
+gunzip -c input1.gz > input1
+gunzip -c input2.gz > input2
+
+$bin/tlm -lm=mix -slmi=sublm -n=4 -oarpa=$outputfile > /dev/null 2>&1
+cat $outputfile | perl -pe 's/[\t ]+/\n/g' 
+
+rm $outputfile input1 input2

@@ -1,0 +1,42 @@
+#! /bin/sh
+
+bin=$IRSTLM/bin
+
+testdir=$1
+cd $testdir
+
+inputfile=input.gz
+outputfile=output_$$
+
+for n in 1 2 3 4 5 ; do 
+for smoothing in "witten-bell" "stupid-backoff" ; do 
+
+$bin/build-lm.sh  -i "gunzip -c $inputfile" -n $n -o $outputfile.blm.iarpa.gz -k 5 -p -s $smoothing > /dev/null 2>&1
+gunzip $outputfile.blm.iarpa.gz > /dev/null 2>&1 
+$bin/compile-lm $outputfile.blm.iarpa $outputfile.blm.arpa --text=yes > /dev/null 2>&1
+
+additional_parameters=""
+if [ $smoothing == "witten-bell" ] ; then 
+smoothing="wb"
+elif [ $smoothing == "stupid-backoff" ] ; then 
+smoothing="stb"
+additional_parameters="-bo=y"
+fi
+
+$bin/tlm -tr="gunzip -c $inputfile" -n=$n -o=$outputfile.tlm.arpa -lm=$smoothing $additional_parameters > /dev/null 2>&1
+
+mkdir -p tmp_blm$$ tmp_tlm$$
+cat $outputfile.blm.arpa | perl -pe 's/[\t ]+/\n/g' | ./filter-stdout > tmp_blm$$/results.dat
+cat $outputfile.tlm.arpa | perl -pe 's/[\t ]+/\n/g' | ./filter-stdout > tmp_tlm$$/results.dat
+
+##compare-results tmp_blm$$ tmp_tlm$$ 2> /dev/null
+compare-results tmp_blm$$ tmp_tlm$$
+
+mv tmp_blm$$ tmp_blm$$_$smoothing
+mv tmp_tlm$$ tmp_tlm$$_$smoothing
+rm -rf ${outputfile}*
+rm -rf tmp_blm$$ tmp_tlm$$
+
+done
+done
+
