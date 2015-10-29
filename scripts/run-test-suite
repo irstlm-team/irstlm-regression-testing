@@ -2,6 +2,8 @@
 
 use strict;
 my $script_dir; BEGIN { use Cwd qw/ abs_path /; use File::Basename; $script_dir = dirname(abs_path($0)); push @INC, $script_dir; }
+my $main_dir=dirname(${script_dir});
+
 use Getopt::Long;
 
 if (!defined $ENV{HOST}){
@@ -57,16 +59,15 @@ use POSIX qw ( strftime );
 
 my $test_dir;
 my $BIN_TEST = $script_dir;
-my $MAIN_TEST = "${script_dir}/..";
 my $data_dir;
 
 GetOptions("data-dir=s" => \$data_dir,
           ) or exit 1;
 
-$data_dir = IrstLMRegressionTesting::find_data_directory($MAIN_TEST, $data_dir);
+$data_dir = IrstLMRegressionTesting::find_data_directory($main_dir, $data_dir);
 
 my $test_run = "$BIN_TEST/run-single-test.pl --data-dir=$data_dir";
-$test_dir = $MAIN_TEST . "/tests";
+$test_dir = ${main_dir} . "/tests";
 $test_run .= " --test-dir=$test_dir" if $test_dir;
 
 print "Data directory: $data_dir\n";
