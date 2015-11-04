@@ -29,11 +29,8 @@ mkdir -p tmp_blm$$ tmp_tlm$$
 cat $outputfile.blm.arpa | perl -pe 's/[\t ]+/\n/g' | ./filter-stdout > tmp_blm$$/results.dat
 cat $outputfile.tlm.arpa | perl -pe 's/[\t ]+/\n/g' | ./filter-stdout > tmp_tlm$$/results.dat
 
-##compare-results tmp_blm$$ tmp_tlm$$ 2> /dev/null
-compare-results tmp_blm$$ tmp_tlm$$
+compare-results tmp_blm$$ tmp_tlm$$ 2> /dev/null
 
-mv tmp_blm$$ tmp_blm$$_$smoothing
-mv tmp_tlm$$ tmp_tlm$$_$smoothing
 rm -rf ${outputfile}*
 rm -rf tmp_blm$$ tmp_tlm$$
 
