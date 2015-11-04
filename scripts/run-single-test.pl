@@ -2,6 +2,8 @@
 
 use strict;
 my $script_dir; BEGIN { use Cwd qw/ abs_path /; use File::Basename; $script_dir = dirname(abs_path($0)); push @INC, $script_dir; }
+my $main_dir=dirname(${script_dir});
+
 use IrstLMRegressionTesting;
 use Getopt::Long;
 use File::Temp qw ( tempfile );
@@ -9,10 +11,11 @@ use POSIX qw ( strftime );
 my @SIGS = qw ( SIGHUP SIGINT SIGQUIT SIGILL SIGTRAP SIGABRT SIGIOT SIGBUS SIGFPE SIGKILL SIGUSR1 SIGSEGV SIGUSR2 SIGPIPE SIGALRM SIGTERM SIGSTKFLT SIGCHLD SIGCONT SIGSTOP SIGTSTP SIGTTIN SIGTTOU SIGURG SIGXCPU SIGXFSZ SIGVTALRM SIGPROF SIGWINCH SIGIO SIGPWR SIGSYS SIGUNUSED SIGRTMIN );
 my ($decoder, $test_name);
 
-my $test_dir = "$script_dir/tests";
-my $data_dir;
+my $test_dir = "$main_dir/tests";
+my $results_dir = "$main_dir/results";
+my $data_dir = IrstLMRegressionTesting::find_data_directory($main_dir);
+
 my $BIN_TEST = $script_dir;
-my $results_dir;
 
 GetOptions("test=s"    => \$test_name,
            "data-dir=s"=> \$data_dir,
@@ -27,18 +30,20 @@ die "Please specifiy the absolute path of the data directory!\n" unless $data_di
 #setting the path where LM are stored
 $ENV{IRSTLM_LM_PATH} = "$data_dir/lm";
 
-die "Cannot locate test dir at $test_dir" unless (-d $test_dir);
 
 $test_dir .= "/$test_name";
+print STDERR "test_dir:|${test_dir}|\n";
+print STDERR "results_dir:|${results_dir}|\n";
+
 die "Cannot locate test dir at $test_dir" unless (-d $test_dir);
 
 #### get place to put results
-unless (defined $results_dir) { $results_dir = "$data_dir/results"; }
 if (!-d $results_dir) {
   print STDERR "[WARNING] Results directory not found.\n";
   mkdir ($results_dir) || die "Failed to create $results_dir";
 }
 $results_dir .= "/$test_name";
+
 if (!-d $results_dir) {
   print STDERR "[WARNING] Results directory for test=$test_name could not be found.\n";
   mkdir ($results_dir) || die "Failed to create $results_dir";
