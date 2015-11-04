@@ -39,13 +39,13 @@ die "Cannot locate test dir at $test_dir" unless (-d $test_dir);
 
 #### get place to put results
 if (!-d $results_dir) {
-  print STDERR "[WARNING] Results directory not found.\n";
+  print STDERR "[WARNING] Results directory not found; hence created.\n";
   mkdir ($results_dir) || die "Failed to create $results_dir";
 }
 $results_dir .= "/$test_name";
 
 if (!-d $results_dir) {
-  print STDERR "[WARNING] Results directory for test=$test_name could not be found.\n";
+  print STDERR "[WARNING] Results directory for test=$test_name not found; hence created.\n";
   mkdir ($results_dir) || die "Failed to create $results_dir";
 }
 ##########
