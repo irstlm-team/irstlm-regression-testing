@@ -27,11 +27,28 @@ such a version was installed, as follows:
   . IRSTLM=/path/to/irstlm
 
 2) Running the whole suite of regressions tests
-./src/run-test-suite
-[to be completed]
+./script/run-test-suite [--data-dir=_path_to_data_] [--test-dir=_path_to_tests_] [--results-dir=_path_to_result_]
+
+Optionally with parameter "--data-dir", you can specify where data and models are located; by default they are located in "data".
+Optionally with parameter "--test-dir", you can specify where tests are located; by default they are located in "tests".
+Optionally with parameter "--results-dir", you can specify where results of the regression tests will be stored; by default they will be stored in "results".
+
+Please, look at below in case of failure of any test.
+
+Please, do not care too much on the time statistics.
+
 
 3) Running a single regressions test
-[to be completed]
+./script/run-single-test.pl --test _test_name_ [--data-dir=_path_to_data_] [--test-dir=_path_to_tests_] [--results-dir=_path_to_result_]
+
+Optionally with parameter "--data-dir", you can specify where data and models are located; by default they are located in "data".
+Optionally with parameter "--test-dir", you can specify where tests are located; by default they are located in "tests".
+Optionally with parameter "--results-dir", you can specify where results of the regression tests will be stored; by default they will be stored in "results".
+
+Please, look at below in case of failure of the test.
+
+To get the list of available regression tests, please run the following command
+scripts/run-test-suite --list
 
 4) Checking what went wrong
 [to be completed]
