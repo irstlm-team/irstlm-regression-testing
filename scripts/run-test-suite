@@ -1,5 +1,4 @@
 #!/usr/bin/perl -w
-irint "cmd: $test_run\n\n";
 
 use File::Temp qw ( tempfile );
 use POSIX qw ( strftime );
@@ -38,7 +37,7 @@ my @tests = grep(!/^\.\.?$/, readdir(D));
 closedir(D);
 
 my @qsubtests = grep (/qsub$/, @tests);
-my @tests = grep(!/qsub$/,@tests);
+@tests = grep(!/qsub$/,@tests);
 
 if (@qsubtests){
   my $cmd=&getQsubCmd();
