@@ -13,7 +13,6 @@ use IrstLMRegressionTesting;
 
 my $data_dir;
 my $test_dir = ${main_dir} . "/tests";
-###my $results_dir = ${main_dir} . "/results";
 my $results_dir;
 my $BIN_TEST = $script_dir;
 
@@ -60,9 +59,9 @@ my $test_run = "$BIN_TEST/run-single-test.pl --data-dir=$data_dir";
 $test_run .= " --test-dir=$test_dir" if $test_dir;
 $test_run .= " --results-dir=$test_dir" if $results_dir;
 
-print STDOUT "Data directory: $data_dir\n";
-print STDOUT "Test directory: $test_dir\n";
-print STDOUT "Result directory: $results_dir\n\n";
+print STDOUT "Data directory: $data_dir\n" if $data_dir;
+print STDOUT "Test directory: $test_dir\n" if $test_dir;
+print STDOUT "Result directory: $results_dir\n\n" if $results_dir;
 
 print STDOUT "Running tests: @tests\n\n";
 
