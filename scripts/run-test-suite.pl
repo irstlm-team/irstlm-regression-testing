@@ -35,8 +35,8 @@ opendir(D, "$test_dir") || die "Can't open directory $test_dir: $!\n";
 my @tests = grep(!/^\.\.?$/, readdir(D));
 closedir(D);
 
-my @qsubtests = grep (/qsub$/, @tests);
-@tests = grep(!/qsub$/,@tests);
+my @qsubtests = sort(grep (/qsub$/, @tests));
+@tests = sort(grep(!/qsub$/,@tests));
 
 if (@qsubtests){
   my $cmd=&getQsubCmd();
